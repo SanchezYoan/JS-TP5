@@ -1,15 +1,16 @@
 
-const body = document.querySelector("body");
+
+
 
 const colorGenerator = () => {       
-    let a = (Math.random() * 255).toFixed(0)
-    let b = (Math.random() * 255).toFixed(0)
-    let c = (Math.random() * 255).toFixed(0)
-
-    body.style.background = "rgb("+a+","+b+","+c+")"
-    body.style.transition =  "0.5s"
+    
+    const r = Math.floor(Math.random() * 255)
+    const g = Math.floor(Math.random() * 255)
+    const b = Math.floor(Math.random() * 255)
+    const color = `rgb(${r}, ${g}, ${b})`;
+    
+    document.body.style.background = color
+    document.body.innerHTML = `<h2> ${color} </h2>`
 }
 
-setInterval(() => {
-    colorGenerator()
-    }, 2000);
+setInterval(colorGenerator, 1000)
